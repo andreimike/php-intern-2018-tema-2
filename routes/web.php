@@ -24,3 +24,11 @@ Route::get('/company/view-company', 'CompanyController@index')->name('view-compa
 Route::get('company/company-list/{id}', 'CompanyController@edit')->name('company-edit');
 Route::post('company/company-list/{id}', 'CompanyController@update')->name('company-update');
 Route::delete('company/company-list/{id}', 'CompanyController@destroy')->name('company.delete');
+
+// Employee Routes
+Route::get('/employee/create', 'EmployeeController@create')->name('create-employee');
+Route::post('/employee/add', 'EmployeeController@store')->name('employee.store');
+Route::get('/employee/view-employee', 'EmployeeController@index')->name('view-employee');
+Route::get('/employee/employee-list/{id}', 'EmployeeController@edit')->name('employee-edit');
+Route::post('/employee/employee-list/{id}', 'EmployeeController@update')->name('employee-update');
+Route::delete('/employee/employee-list/{id}', 'EmployeeController@destroy')->name('employee.delete');

@@ -51,7 +51,7 @@
                                 <form class="form-delete" action="{{ route('company.delete', ['id' => $company->id]) }}" method="POST" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <button type="submit" class="btn btn-outline-light" onclick="return confirm('You want to delete {{$company->name}}. Are you sure?')"
+                                    <button type="submit" class="btn btn-outline-light btn-sm" onclick="return confirm('You want to delete {{$company->name}}. Are you sure?')"
                                             title="Delete this company - {{$company->name}}">
                                         <i class="fas fa-trash"> Delete</i>
                                     </button>

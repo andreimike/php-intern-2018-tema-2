@@ -17,7 +17,7 @@ class Employee extends Model
 
     public function company()
     {
-        return $this->belongsTo('App\Models\Company', 'company_id');
+        return $this->belongsTo('App\Models\Company');
     }
 }
 

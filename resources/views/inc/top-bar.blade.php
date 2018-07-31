@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info text-dark">
+<nav class="navbar navbar-expand-lg navbar-light top-bar-style text-dark">
     <a class="navbar-brand text-light pl-3" href="{{ route('app.home') }}"><b>RoWeb</b>App</a>
     <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon text-white"></span>
@@ -9,11 +9,25 @@
             <li class="nav-item active text-white">
                 <a class="nav-link text-light" href="#">Home</a>
             </li>
-            <li class="nav-item active text-light">
-                <a class="nav-link text-white" href="#">Employees</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownCompany" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Company
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownCompany">
+                    <a class="dropdown-item" href="{{ route('view-company') }}"><i class="fas fa-list-ol"></i> View Companies</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item link" href="{{ route('create-company') }}"><i class="fas fa-plus-circle"></i> Add Company</a>
+                </div>
             </li>
-            <li class="nav-item active text-light">
-                <a class="nav-link text-light" href="#">Companies</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownEmployee" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Employees
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownEmployee">
+                    <a class="dropdown-item" href="{{ route('view-employee') }}"><i class="far fa-address-card"></i> View Employees</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('create-employee') }}"><i class="fas fa-user-plus"></i> Add new employee</a>
+                </div>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

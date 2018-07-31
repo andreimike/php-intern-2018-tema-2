@@ -24,29 +24,52 @@
 
             <div class="card bg-white">
                 <div class="card-body">
-                    <form action="{{ route('company-update', ['id'=>$company->id]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('employee-update', ['id'=>$employee->id]) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="name"><i class="fas fa-heading"></i> Name</label>
-                                <input type="text" name="name" class="form-control" id="name" value="{{ $company->name }}" placeholder="Name of Company">
+                                <input type="text" name="name" class="form-control" id="name" value="{{ $employee->name }}" placeholder="Name of Company">
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="description"><i class="fas fa-pen"></i> Description</label>
-                                <textarea id="description" name="description" class="form-control" placeholder="Insert a description for this Company">{{$company->description}}</textarea>
+                            <div class="form-group col-md-6">
+                                <label for="company"> Actual Company</label>
+                                    <input disabled class="form-control" value="{{$employee->company->name}}">
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="company"> Change Company</label>
+                                <select class="form-control" name="company" id="company">
+                                    <option value="{{$employee->company->id}}" selected>{{$employee->company->name}}</option>
+                                    <option style="font-size: 1pt; background-color: #000000;" disabled>&nbsp;</option>
+                                    @foreach($allCompanies as $company)
+                                        <option value="{{$company->id}}">{{$company->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i> Create new Company</button>
+                        <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i> Save</button>
                     </form>
-                    <form class="form-delete" action="{{ route('company.delete', ['id' => $company->id]) }}" method="POST">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        <button type="submit" class="btn btn-outline-danger mt-1" onclick="return confirm('Are you sure?')" title="Delete this company - {{$company->name}}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
+                </div>
+                <div class="card-footer bg-danger">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p class="text-light"><i class="fas fa-exclamation-circle"></i> Danger Zone!</p>
+                            </div>
+                            <div class="col-md-3">
+                                <form class="form-delete" action="{{ route('company.delete', ['id' => $employee->id]) }}" method="POST" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" class="btn btn-outline-light btn-sm" onclick="return confirm('You want to delete {{$employee->name}}. Are you sure?')"
+                                            title="Delete this company - {{$employee->name}}">
+                                        <i class="fas fa-trash"> Delete</i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

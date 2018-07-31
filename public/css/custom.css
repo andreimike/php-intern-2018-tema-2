@@ -1,0 +1,32 @@
+.sidebar-menu-style
+{
+
+    background-color: #1E3D58;
+    color: #E8EEF1 !important;
+}
+
+.footer-style
+{
+    background-color: #E8EEF1;
+    color: #1E3D58 !important;
+}
+
+.top-bar-style
+{
+    color: #E8EEF1 !important;
+    background-color: #057DCD;
+}
+
+.custom-bg-color
+{
+    background-color: #43B0F1 !important;
+}
+
+.card{
+    box-shadow: 1px 1px 1px 1px #d6e9f8, 1px 1px 0 0 #111 !important;
+}
+
+div.custom-bg-color-content
+{
+    background-color: #fefefe;
+}

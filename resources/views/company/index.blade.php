@@ -24,9 +24,9 @@
     <div class="col-md-12 mt-3">
         <div class="row justify-content-center">
             <div class="col-md-12 mt-2">
-                <div class="card bg-white">
-                    <div class="card-header bg-primary">
-                        <h4 class="text-center text-white bg-primary">Company</h4>
+                <div class="card">
+                    <div class="card-header custom-bg-color">
+                        <h4 class="text-center text-white">Company</h4>
                     </div>
                     @if(count($companies) > 0)
                     <div class="card-body">
@@ -53,7 +53,7 @@
                                         <td class="text-center">{{ $company->name }}</td>
                                         <td class="text-center">{{ $company->description }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('company-edit', [$company->id]) }}" class="btn btn-outline-success"
+                                            <a href="{{ route('company-edit', [$company->id]) }}" class="btn btn-outline-success btn-sm"
                                                title="Edit this Company - {{$company->name}}">
                                                 <i class="far fa-edit"></i> Edit
                                             </a>
@@ -62,7 +62,7 @@
                                         <form class="form-delete" action="{{ route('company.delete', ['id' => $company->id]) }}" method="POST">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
-                                                <button type="submit" class="btn btn-outline-danger" onclick="return confirm('You want to delete {{$company->name}}. Are you sure?')" title="Delete this company - {{$company->name}}">
+                                                <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('You want to delete {{$company->name}}. Are you sure?')" title="Delete this company - {{$company->name}}">
                                                     <i class="fas fa-trash"> Delete</i>
                                                 </button>
                                             </form>
@@ -80,5 +80,9 @@
             </div>
         </div>
     </div>
-
+    <div class="row mt-4 mb-4 justify-content-center">
+        <div class="col-md-12 text-center">
+            <a href="{{ route('create-company') }}" class="btn btn-primary">Add New Company</a>
+        </div>
+    </div>
 @endsection

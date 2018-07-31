@@ -13,6 +13,7 @@
     <!-- Styles -->
     <!--Include Bootstrap 4.1-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -23,24 +24,20 @@
 
 </head>
 <body>
-<div id="app" style="height: 100%;">
-    <div class="container-fluid">
+<div id="app">
+    <div class="container-fluid custom-bg-color-content">
         <div class="row">
             <div class="col-md-12 pr-0 pl-0">
                 @include('inc.top-bar')
             </div>
         </div>
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+            <nav class="col-md-2 d-none d-md-block sidebar sidebar-menu-style">
                 @include('inc.menu')
             </nav>
-            <div class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="col-md-9 ml-sm-auto col-lg-10 pt-3 custom-bg-color-content">
                 @yield('content')
-                <div class="footer row mt-3 bg-white">
-                    <div class="col-md-12">
-                        <h6 class="text-center text-dark">RoWebApp &copy; {{ date('Y') }}</h6>
-                    </div>
-                </div>
+                @include('inc.footer')
             </div>
         </div>
     </div>

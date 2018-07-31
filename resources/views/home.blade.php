@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card text-center">
                 <div class="card-header">
-                   Main Page
+                   Hello Admin!
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Welcome</h5>
